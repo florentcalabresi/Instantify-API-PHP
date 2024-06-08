@@ -1,5 +1,9 @@
 {
     "name": "sunshinedev/instantify-api-php",
+    "description": "A API FOR INSTANTIFY SERVICE",
+    "keywords": ["notification", "service"],
+    "homepage": "https://github.com/florentcalabresi/Instantify-API-PHP",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Sunshinedev\\InstantifyApiPhp\\": "src/"
@@ -8,7 +12,7 @@
     "authors": [
         {
             "name": "Florent Calabresi",
-            "email": "60184656+florentcalabresi@users.noreply.github.com"
+            "email": "florent.cala@gmail.com"
         }
     ],
     "require": {
