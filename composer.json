@@ -11,5 +11,7 @@
             "email": "60184656+florentcalabresi@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.3"
+    }
 }
