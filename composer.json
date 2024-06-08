@@ -1,0 +1,15 @@
+{
+    "name": "sunshinedev/instantify-api-php",
+    "autoload": {
+        "psr-4": {
+            "Sunshinedev\\InstantifyApiPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Florent Calabresi",
+            "email": "60184656+florentcalabresi@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
