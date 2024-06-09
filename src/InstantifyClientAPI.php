@@ -3,7 +3,6 @@
 namespace Sunshinedev\InstantifyApiPhp;
 
 use GuzzleHttp\Client;
-use Dotenv\Dotenv;
 
 final class InstantifyClientAPI {
 
@@ -13,11 +12,9 @@ final class InstantifyClientAPI {
 
     function __construct($url = "", $port = "", $api_key = "")
     {
-        $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-        $dotenv->load();
-        $this->url = $url == "" ? $_ENV['INSTANTIFY_URL'] : $url;
-        $this->port = $port == "" ? $_ENV['INSTANTIFY_PORT'] : $port;
-        $this->api_key = $api_key == "" ? $_ENV['INSTANTIFY_API_KEY'] : $api_key;
+        $this->url = $url;
+        $this->port = $port;
+        $this->api_key = $api_key;
     }
 
     function send($user_id, $channel, $data) {
