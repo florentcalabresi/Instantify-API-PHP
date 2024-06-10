@@ -35,7 +35,7 @@ final class InstantifyClientAPI {
 
     function checkClient($client_id) {
         $client = new Client();
-        $response = $client->request('POST', (str_starts_with($this->url, 'https://') ? $this->url : $this->url . ':' . $this->port) . '/api/client', [
+        $promise = $client->requestAsync('POST', (str_starts_with($this->url, 'https://') ? $this->url : $this->url . ':' . $this->port) . '/api/client', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => $this->api_key
@@ -44,7 +44,16 @@ final class InstantifyClientAPI {
                 'client_id' => $client_id,
             ]
         ]);
-        return $response->getStatusCode() == 200 ? $response->getBody() : "Error";
+        $promise->then(
+            function ($response) {
+                return $response->getBody();
+            },
+            function ($exception) {
+                return "Error";
+            }
+        );
+        
+        $promise->wait();
     }
 
 
