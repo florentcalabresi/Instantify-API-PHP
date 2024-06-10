@@ -33,6 +33,20 @@ final class InstantifyClientAPI {
         return $response->getStatusCode() == 200 ? $response->getBody() : "Error";
     }
 
+    function checkClient($client_id) {
+        $client = new Client();
+        $response = $client->request('POST', (str_starts_with($this->url, 'https://') ? $this->url : $this->url . ':' . $this->port) . '/api/test', [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Authorization' => $this->api_key
+            ],
+            'json' => [
+                'client_id' => $client_id,
+            ]
+        ]);
+        return $response->getStatusCode() == 200 ? $response->getBody() : "Error";
+    }
+
 
 
 }
