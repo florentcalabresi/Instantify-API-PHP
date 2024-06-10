@@ -19,7 +19,7 @@ final class InstantifyClientAPI {
 
     function send($user_id, $channel, $data) {
         $client = new Client();
-        $response = $client->request('POST', $this->url . $this->port !== "" ? ':' . $this->port : '' . '/api/test', [
+        $response = $client->request('POST', str_starts_with($this->url, 'https://') ? $this->url : $this->url . ':' . $this->port . '/api/test', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => $this->api_key
