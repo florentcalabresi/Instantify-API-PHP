@@ -44,7 +44,7 @@ final class InstantifyClientAPI {
                 'client_id' => $client_id,
             ]
         ]);
-        $promise->then(
+        return $promise->then(
             function ($response) {
                 return $response->getBody();
             },
@@ -54,6 +54,7 @@ final class InstantifyClientAPI {
         );
         
         $promise->wait();
+
     }
 
 
