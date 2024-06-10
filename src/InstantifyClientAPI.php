@@ -44,7 +44,7 @@ final class InstantifyClientAPI {
                 'client_id' => $client_id,
             ]
         ]);
-        return $response->getStatusCode() == 200 ? $response->getBody() : "Error";
+        return $response->getStatusCode();
     }
 
 
